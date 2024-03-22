@@ -19,7 +19,7 @@ module.exports = {
             idle: 10000,
             acquire: 30000,
         },
-        logging: true,
+        logging: console.log,
     },
     test: {
         username: process.env.DB_USERNAME,
@@ -39,7 +39,7 @@ module.exports = {
             idle: 10000,
             acquire: 30000,
         },
-        logging: true,
+        logging: console.log,
     },
     production: {
         username: process.env.DB_USERNAME,
