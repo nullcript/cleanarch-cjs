@@ -2,6 +2,7 @@
 
 const path = require("node:path");
 const express = require("express");
+const expressLayouts = require("express-ejs-layouts");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const {createClient} = require("redis");
@@ -46,6 +47,10 @@ class Application {
     }
 
     async configApplication() {
+        this.#app.set("view engine", "ejs");
+        this.#app.set("views", path.join(rootDir, "src", "interfaces", "views"));
+        this.#app.set("layout", "layouts/layout");
+        this.#app.use(expressLayouts);
         this.#app.use(express.json());
         this.#app.use(express.urlencoded({extended: false}));
         this.#app.use(cookieParser(process.env.SECRET_COOKIE_KEY));

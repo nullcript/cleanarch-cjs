@@ -23,6 +23,14 @@ class BaseUseCase {
             };
         }
     }
+
+    responseWithTemplateEngine(data, template = "index", layout = "layouts/layout") {
+        return {
+            data: data,
+            template: template,
+            layout: layout
+        };
+    }
 }
 
 module.exports = BaseUseCase;
