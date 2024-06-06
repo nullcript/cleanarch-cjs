@@ -1,5 +1,5 @@
 {
-  "name": "cleanarch",
+  "name": "cleanarch-cjs",
   "version": "1.0.0",
   "description": "a CleanArch for node/express projects",
   "main": "app.js",
